@@ -1,0 +1,63 @@
+Node js
+
+1. We can make console in browser and we can also make console in node also. Are they both same?
+A. No, console.log is not a part of javascript. It is a debugging statement that is provided by the web browser. We cannot run the node js directly on the web browser. This is provided by the node js. This mechanism is similar to the javascript console mechanism. This is the internal module of node js. So we can use console.log(), console.error() and console.warn in the node js console. So, the console.log in node js and console.log in web browser are not similar.
+
+2. Why we are getting undefined everytime when we are executing the commands?
+A. The undefined means the syntax we have returned here.
+
+3. What is the difference between == and ===?
+A. No, both are not same. In === we check matched value and type also but == only checks the matched value.
+
+4. why we use filter in javascript?
+A. We use to create a new array by selecting elements from an existing array that satisfy a given condition.
+
+5. How you can filter arrays value?
+A. By using the filter method it will create a new array containing the elements that meet a specific condition.
+
+6. What are the core modules?
+A. Every programming language have some features and functionalaties and we call them core modules.
+
+7. Is it necessary to just import our file system on a top or any module on a top?
+A. No, it's not necessary. If we just import after console.log but it will still work fine. It is always recommeded to import file system on a top.
+
+8. Is there any way to import a single function from the file system?
+A. Yes, this is possible.
+
+9. Is it require that we have to put our const name same as our package name?
+A. No, it is not required. We can give any name.
+
+10. What is the difference between arrow function and simple function?
+A. Arrow function is used to write the short code. No need to define and declare. It is used to write the small code in one line. In normal function we not define and declare and write the code in multiple code.
+
+11. What is the role of http module?
+A. It will handle request and response with our apis and clients(web browser).
+
+12. What is the difference between package.json and package-lock.json?
+A. Package.json will keep the details of the application and package-lock.json will keep the details of the libraries and dependencies. dependencies means how many libraries we required.
+
+13. Node js is single threaded or multi threaded?
+A. Node js is single threaded beacuse it executes only one command at a time whereas multithreaded will run multiple commands at a time.
+
+14. If we do not push this code here then how can another developer will get these node modules and libraries?
+A. He just need to run only the simple command npm install and the node modules will be created. npm install will take the information from the package.json and install according to that information.
+
+15. If bymistakenly the node_modules are deleted how can we can recover them?
+A. we can recover them by using npm install.
+
+16. Is node js a sync language or async language?
+A. This is async language and javascript also a async language. Both languages are using v8 engine.
+
+17. What is sync language and async language?
+A. Sync languages execute code sequentially, while async languages allow concurrent execution of tasks.
+
+18. What is meant by status 200 and what are the other possible values of 200 and where this is actually coming from?
+A. It's actually coming from header. It actually tells that what is the response of the header. 200 means everything is ok and we will get the data. If we keep 201 that means we just created something. Whenever we are accepting any data from the form or front end development that time we just create a new entry and just show 201. It's totallu up to us. 404 means page not found or data not found. 500 means server error.
+
+19. Can we access the files from outside the node folder?
+A. No
+
+20. What is the reason?
+A. Whenever we run the node command it will work like node server. At that time the directory is behaving like a server and server cannot get the files from the other servers.
+
+21.
