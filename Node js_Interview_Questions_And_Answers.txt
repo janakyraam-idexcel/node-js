@@ -60,4 +60,41 @@ A. No
 20. What is the reason?
 A. Whenever we run the node command it will work like node server. At that time the directory is behaving like a server and server cannot get the files from the other servers.
 
-21.
+21. If we name as peter as a query parameter then how we can access it inside the html page?
+A. 
+
+22. What is path module?
+A. It allows us to traverse any folder or file of the project. we can access any folder or file of the project so you can access it with the path module. It can also inner files.
+
+23. What is static function?
+A. It allow us to use the static content and we just pass our path of the folder.
+
+24. Can we apply external style to these static conetent?
+A. Yes, but we cannot directly provide the path directly here.
+
+25. How you will remove the extensions from url?
+A.
+
+26. How you can create a 404 page and say the 404 page
+A.
+
+27. How can we load different url from the different pages.
+A.
+
+28. How we can make the common header file?
+A. 
+
+29. What are the middlewares?
+A.
+
+30. How we can apply the middelwares?
+A.
+
+31. What are the types of middlewares?
+A. 
+
+32. What is dii between app level middleware and application middlware?
+A. In application middleware, we cannot use the middleware on a specific route so that why route level middleware is more advanced.
+
+33. How can we create single route or group of route with the middleware?
+A.

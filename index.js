@@ -171,14 +171,137 @@
 //node api
 //callback queue
 
-console.log("starting up...");
+// console.log("starting up...");
 
-    setTimeout(()=>{
-        console.log("2 second wait...");
-    },2000)
+//     setTimeout(()=>{
+//         console.log("2 second wait...");
+//     },2000)
 
-    setTimeout(()=>{
-        console.log("0 second wait...");
-    },0)
+//     setTimeout(()=>{
+//         console.log("0 second wait...");
+//     },0)
 
-console.log("finishing up...");
+// console.log("finishing up...");
+
+/*Express JS
+Routing req and res params
+render html and json
+Make HTML Page
+Remove extensions from url and 404 page
+EJS template engine
+Dynamic page with ejs
+express js middleware
+route level middleware express js */
+
+const express = require('express');
+const app = express();
+const reqFilter=require('./middleware');
+const route=express.Router();
+
+// const reqFilter=(req,res,next)=>{
+//     console.log("reqFilter");
+//     if(!req.query.age){
+//         res.send("Please provide your age");
+//     }
+//     else if(req.query.age<18){
+//         res.send("You are under aged");
+//     }
+//     else{
+//         next();
+//     }
+// }
+
+//app.use(reqFilter);
+route.use(reqFilter);
+
+//const path = require('path');
+//const publicPath = path.join(__dirname,'public');
+
+//app.set('view engine','ejs');
+
+
+//console.log(publicPath);
+//app.use(express.static(publicPath));
+
+//
+// app.get("",(req,res)=>{
+//     //res.send('Welcome, This is a About Page');
+//     //console.log(req.query.name); 
+// //res.send('Welcome, '+req.query.name);
+// res.send(`<h1>Welcome to Home Page</h1>
+// <a href="/about">Go to About Page</a>`);
+
+// });
+
+// app.get("/about",(req,res)=>{
+//     //res.send('Welcome, This is a About Page');
+//     res.send(`<input type="text" placeholder="user name" value="${req.query.name}"/>
+//     <button>Click</button>
+//     <a href="/">Go to Home Page</a>`);
+//     });
+
+//     app.get("/help",(req,res)=>{
+//         //res.send('Welcome, This is a Help Page');
+//         res.send([
+//             {
+//             name:"peter",
+//             email:"peter@test.com"
+//             },
+//             {
+//                 name:"bruce", email:"bruce@test.com"
+//             }
+//         ]);
+//         });
+
+//console.log(__dirname);
+
+// app.get('',(_,res)=>{
+//     res.sendFile(`${publicPath}/index.html`)
+// });
+
+// app.get('/contact',(_,res)=>{
+//     res.sendFile(`${publicPath}/about.html`)
+// });
+
+// app.get('/help',(_,res)=>{
+//     res.sendFile(`${publicPath}/help.html`)
+// });
+
+// app.get('*',(_,res)=>{
+//     res.sendFile(`${publicPath}/nopage.html`)
+// });
+
+//  app.get('/profile',(_,res)=>{
+//     const user={
+//         name:"Peter",
+//         email:'peter@test.com',
+//         country:'USA',
+//         skills:["php","js","node.js","java", "c++"]
+//     }
+//     res.render('profile',{user});
+//  });
+
+//  app.get('/login',(_,res)=>{
+//     res.render('login');
+// });
+
+app.get('/', (req,res)=>{
+    res.send('Welcome to the Home Page');
+});
+
+app.get('/users', (req,res)=>{
+    res.send('Welcome to the Users Page');
+});
+
+route.get('/about', (req,res)=>{
+    res.send('Welcome to the About Page');
+});
+
+route.get('/contact', (req,res)=>{
+    res.send('Welcome to the Contact Page');
+});
+
+app.use('/',route);
+
+
+    app.listen(5000);
