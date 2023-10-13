@@ -182,8 +182,3 @@ console.log("starting up...");
     },0)
 
 console.log("finishing up...");
-
-
-console.log('node.js');
-
-console.log('Hi');
