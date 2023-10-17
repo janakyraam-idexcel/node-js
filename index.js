@@ -193,10 +193,10 @@ Dynamic page with ejs
 express js middleware
 route level middleware express js */
 
-const express = require('express');
-const app = express();
-const reqFilter=require('./middleware');
-const route=express.Router();
+// const express = require('express');
+// const app = express();
+// const reqFilter=require('./middleware');
+// const route=express.Router();
 
 // const reqFilter=(req,res,next)=>{
 //     console.log("reqFilter");
@@ -212,7 +212,7 @@ const route=express.Router();
 // }
 
 //app.use(reqFilter);
-route.use(reqFilter);
+//route.use(reqFilter);
 
 //const path = require('path');
 //const publicPath = path.join(__dirname,'public');
@@ -285,23 +285,43 @@ route.use(reqFilter);
 //     res.render('login');
 // });
 
-app.get('/', (req,res)=>{
-    res.send('Welcome to the Home Page');
-});
+// app.get('/', (req,res)=>{
+//     res.send('Welcome to the Home Page');
+// });
 
-app.get('/users', (req,res)=>{
-    res.send('Welcome to the Users Page');
-});
+// app.get('/users', (req,res)=>{
+//     res.send('Welcome to the Users Page');
+// });
 
-route.get('/about', (req,res)=>{
-    res.send('Welcome to the About Page');
-});
+// route.get('/about', (req,res)=>{
+//     res.send('Welcome to the About Page');
+// });
 
-route.get('/contact', (req,res)=>{
-    res.send('Welcome to the Contact Page');
-});
+// route.get('/contact', (req,res)=>{
+//     res.send('Welcome to the Contact Page');
+// });
 
-app.use('/',route);
+// app.use('/',route);
 
 
-    app.listen(5000);
+//     app.listen(5000);
+
+//mongodb database connection and CRUD opeartionsß
+
+// const dbConnect=require('./mongodb'); 
+
+// dbConnect.then((res)=>{
+// console.log(res.find({name:'nord'}).toArray().then((data)=>{
+//     console.log(data);
+// }));
+// });
+
+// const main= async()=>{
+//     //console.log("function called");
+//     let data=await dbConnect;
+//     data=await data.find({name:"nord"}).toArray();
+//     console.log(data);
+// }
+
+// main();
+

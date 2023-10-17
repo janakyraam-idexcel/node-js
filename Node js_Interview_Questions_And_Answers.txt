@@ -98,3 +98,61 @@ A. In application middleware, we cannot use the middleware on a specific route s
 
 33. How can we create single route or group of route with the middleware?
 A.
+
+34. How we can setup the environment for mongo db?
+A. Environment variables->bin->folder path
+
+35. What is compass tool?
+A. This is the GUI tool to handle the mongo db and this is easy tool to use by mongobd for beginners. This is like a php my admin for mysql.
+
+36. What is CRUD opeartion?
+A.Performing create, read, update and delete operations.
+
+37. How we can insert, check, update and delete the data?
+A. 
+mongo db commands:
+1. show dbs
+2. use e-comm(database)
+3. db.createCollection('products')
+4. db.products.drop()
+5. db.dropDatabase()
+6. db.products.insertOne({name:abc}); //insert the record
+7. db.products.find(); //get or read the record
+8. db.products.updateOne({name:"u20"}, {$set:{"price":200}}) //update the record
+9. db.products.deleteOne({name:"m40"}) //delete the record
+
+38. Can we connect two databases at the same time?
+A. Yes
+
+39. How we can insert multiple records?
+A. we can just put insertMany then we can make an array.
+
+40. How we can just read the data with the where condition?
+A. Inside the find function we can keep name and price information.
+
+41. When we have multiple same name how we can update one record?
+A. we will use the updateOne function.
+
+42. So which record will be updated?
+A. The first record will be updated.
+
+43. How we will get to know that the record is deleted or not?
+A. We can check through the deleted count.
+
+44. Can we provide a body with get body?
+A. No
+
+45. Why we use express.json here?
+A. This is used to get the body from the request.
+
+46. Can we provide the same route for get, post, put and delete apis?
+A. Yes, if we provide two same routes the route method should be present    
+
+47. can we use post method for updating the data?
+A. Yes, we can use it but according to the standards we should use put method.
+
+48. How we can send the data inside the parameter?
+A. /:name
+
+49. If we want to delete multiple records in delete method?
+A. We have send the ids inside array in body.
