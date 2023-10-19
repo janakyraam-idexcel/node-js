@@ -306,7 +306,7 @@ route level middleware express js */
 
 //     app.listen(5000);
 
-//mongodb database connection and CRUD opeartionsß
+//mongodb database connection and CRUD opeartions
 
 // const dbConnect=require('./mongodb'); 
 
@@ -324,4 +324,120 @@ route level middleware express js */
 // }
 
 // main();
+
+//mongoose CRUD operations and GET, POST, PUT, DELETE API methods
+
+// const mongoose = require('mongoose');
+
+//     mongoose.connect('mongodb://localhost:27017/e-comm');
+//     const productSchema = new mongoose.Schema({
+//         name: String,
+//         price: Number,
+//         brand: String,
+//         category: String
+//     });
+
+// const saveInDB = async()=>{
+//     const Product = mongoose.model('products', productSchema);
+//     let data = new Product({
+//         name: "max 100",
+//         price: 200,
+//         brand: 'max',
+//         category: 'Mobile'
+//     });
+//     const result = await data.save();
+//     console.log(result);
+// }
+
+// const updateInDB =async  () => {
+//     const Product = mongoose.model('products', productSchema);
+//     let data =await  Product.updateOne(
+//         { name: "max 100" },
+//         {
+//             $set: { price: 200,name:'max 6 pro' }
+//         }
+//     )
+//     console.log(data);
+// }
+
+// const deleteInDB = async ()=>{
+//     const Product = mongoose.model('products', productSchema);
+//     let data = await Product.deleteOne({name:'max 121'})
+//     console.log(data);
+// }
+
+// const findInDB = async ()=>{
+//     const Product = mongoose.model('products', productSchema);
+//     let data = await Product.find({name:'max 6 pro'})
+//     console.log(data);
+// }
+// findInDB();
+
+// const express = require('express');
+// require("./config");
+// const Product = require('./product');
+// const app = express();
+
+// app.use(express.json());
+// app.post("/create", async (req, resp) => {
+//     let data = new Product(req.body);
+//     const result = await data.save();
+//     resp.send(result);
+// });
+
+// app.get("/list", async (req, resp) => {
+//     let data = await Product.find();
+//     resp.send(data);
+// })
+
+// app.delete("/delete/:_id", async (req, resp) => {
+//     console.log(req.params)
+//     let data = await Product.deleteOne(req.params);
+//     resp.send(data);
+// })
+
+// app.put("/update/:_id",async (req, resp) => {
+//     console.log(req.params)
+//     let data = await Product.updateOne(
+//         req.params,
+//         {$set: req.body}
+//     );
+//     resp.send(data);
+// })
+
+//Search API with multiple files
+// app.get("/search/:key", async (req, resp) =>{
+//     let data=await Product.find({
+//         "$or": [
+//             {name:{$regex:req.params.key}},
+//             {brand:{$regex:req.params.key}}
+//         ]
+//     });
+// resp.send(data);
+// })
+
+// app.listen(5000);
+
+//Upload the file
+
+// const express = require('express');
+// const multer = require('multer');
+// const app = express();
+
+// const upload= multer({
+//     storage: multer.diskStorage({
+//         destination:function(req,file,cb){
+//             cb(null,"uploads");
+//         },
+//         filename: function(req,file,cb){
+//             cb(null,file.fieldname+"-"+Date.now()+".jpg");
+//         }
+//     })
+// }).single('user_file');
+
+// app.post('/upload', upload, (req, res)=>{
+//     res.send("file upload");
+// });
+
+// app.listen(5000);
 
