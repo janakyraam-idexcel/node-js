@@ -156,3 +156,20 @@ A. /:name
 
 49. If we want to delete multiple records in delete method?
 A. We have send the ids inside array in body.
+
+50. How you can check the os?
+A. os.platform.
+
+51. How you can just make different code for different operating system?
+A. We should check the platform and apply the conditions according to the platform.
+
+52. How we can apply onclick event in node js?
+A. No
+
+53. I have  
+const x=10;
+console.log(x++);
+A. 10
+
+54. Can we create database with node js and mysql?
+A. Yes

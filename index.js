@@ -441,3 +441,111 @@ route level middleware express js */
 
 // app.listen(5000);
 
+//const os=require('os');
+
+//console.log(os.arch());
+//console.log(os.freemem()/(1024*1024*1024));
+//console.log(os.totalmem()/(1024*1024*1024));
+//console.log(os.hostname());
+//console.log(os.platform());
+//console.log(os.userInfo());
+
+// const express = require('express');
+
+// const EventEmitter = require('events');
+
+// const event=new EventEmitter();
+
+// const app= express();
+
+// let count=0;
+// event.on("countAPIRequest",()=>{
+//     count++;
+//     console.log("Request count is: "+count);
+// });
+
+// app.get('/', (req, res)=>{
+// res.send('basic api');
+// event.emit("countAPIRequest");
+// });
+
+// app.get('/update', (req, res)=>{
+//     res.send('update api');
+//     event.emit("countAPIRequest");
+// });
+
+// app.get('/search', (req, res)=>{
+//     res.send('search api');
+//     event.emit("countAPIRequest");
+// });
+
+// app.listen(5000);
+
+// const mysql= require("mysql");
+
+// const con= mysql.createConnection({
+//   host:"localhost",
+//   user:"root",
+//   password:"",
+//   database:"test"
+// });
+
+// con.connect((err)=>{
+//   if(err)
+//   {
+//     console.warn("not connect")
+//   }else{
+//     console.warn("connected!!!")
+//   }
+// })
+
+// con.query("select * from users",(err,result)=>{
+//     if(err)
+//     {
+//       console.warn("some error")
+//     }
+//     else{
+//       console.warn(result)
+//     }
+//   })
+
+const express = require("express");
+const con = require("./config");
+const app = express();
+app.use(express.json);   
+
+
+app.get("/", (req, resp) => {
+  con.query("select * from users", (err, result) => {
+    if (err) { resp.send("error in api") }
+    else { resp.send(result) }
+  })
+});
+
+app.post("/", (req, resp) => {
+    //const data={name:'peter', password:'5050', user_type:'admin'};
+    const data=req.body;
+    con.query("Insert into users set?", data, (error, results, fields) => {
+        if (error) throw error
+        resp.send(result) 
+      })
+  });
+
+  app.put("/:id",(req,resp)=>{
+    const data= [req.body.name,req.body.password,req.body.user_type,req.params.id];
+    con.query("UPDATE users SET name = ?, password = ?, user_type = ? WHERE id = ?",
+    data,(error,results,fields)=>{
+      if(error) throw error;
+      resp.send(results)
+    })
+   
+  })
+
+  app.delete("/:id",(req,resp)=>{
+    con.query("DELETE FROM users WHERE id="+req.params.id,(error,results)=>{
+        if(error) throw error;
+      resp.send(results);
+    })
+  })
+
+app.listen("5000");
